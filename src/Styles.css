@@ -42,7 +42,7 @@ body, html{
 .container {
 
     width: 600px;
-    height: 700px;
+    min-height: 800px;
     background-color: #f2eecb;
     border-radius: 4px;
 
@@ -62,6 +62,8 @@ body, html{
 
     display: flex;
     align-items: flex-start; 
+    margin-top: 100px; /*margin (top) dan padding digunakan untuk memberikan jarak (spasi) dari
+                        satu komponen ke komponen lainnya */
 }
 
 .header-title {
@@ -152,6 +154,8 @@ body, html{
 
     display: flex;
     flex-direction: column;
+
+    min-height: 500px;
 }
 
 .todo {
@@ -161,7 +165,7 @@ body, html{
     flex: 1.0 auto;
     text-align: center;
 
-    min-height: 35px;
+    max-height: 35px;
     margin: 17px 0 0;
     font-family: "Homemade Apple", sans-serif;
     font-size: 24px;
@@ -174,6 +178,9 @@ body, html{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+
+    width: 100%;
+    height: 50px;
 }
 
 /*  (kalau class) .red-font {

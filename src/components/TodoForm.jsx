@@ -1,13 +1,17 @@
-import React, { useState } from 'react'; {/* useState berfungsi untuk melakukan penyimpanan database
+import React, { useState } from 'react'; /* useState berfungsi untuk melakukan penyimpanan database
                                             secara sementara baik dari dirinya sendiri maupun dari luar 
-                                        useState("") mendefinisikan bahwa nilai valu berisi string kosong*/}
+                                        useState("") mendefinisikan bahwa nilai valu berisi string kosong*/
 import PropTypes from 'prop-types';
 
-const TodoForm = ( { addTodo } ) => {
+/* React hanya bertugas mengcompile code yang dari const, sampai ke
+codingan yang return html */
+
+{ /*( { addTodo } ) merupakan props, sehingga bisa dideklarasikan requirementnya pada proptypes */ }
+const TodoForm = ( { addTodo, showAdd } ) => {  
     const [ value, setValue ] = useState("");
 
     const handleFormSubmit = e => {
-        e.preventDefault();
+        e.preventDefault(); /* untuk menghindari refreshing page */
 
         if (!value) {
             
@@ -16,15 +20,25 @@ const TodoForm = ( { addTodo } ) => {
         } 
 
 
+        /* Jika Panjang Karakter Di Todoform Lebih dari 35 Karakter, maka tidak bisa menyimpan
+        datanya */
+        if(value.length >35){
+
+            alert("Jumlah Karakter Maks Untuk Menambahkan List Sebanyak 35 Karakter");
+            setValue("");
+            return;
+        }
+
+        { /* memberikan deklarasi props addTodo  */ }
         addTodo(value);
 
-        alert(value); {/* akan menampilkan data yang sesuai dengan yang diinput di pesan alert */}
         setValue(""); {/* menampilkan string kosong di input text ketika setelah pesan alert dimunculkan */}
     };
 
-    console.log("value", value);
+    /*Conditional Renderring */
+    if(showAdd){
 
-    {/*  onSubmit={ handleFormSubmit } = menjalankan function handleFormSubmit ketika tombol disubmit*/}
+        {/*  onSubmit={ handleFormSubmit } = menjalankan function handleFormSubmit ketika tombol disubmit*/}
     return (
         <section classNameName="add">
             <form className="add-form" onSubmit={ handleFormSubmit }>
@@ -33,11 +47,21 @@ const TodoForm = ( { addTodo } ) => {
             </form>
         </section>
     );
+    } else {
+
+        return null;
+    }
+
+    // console.log("value", value);
+
+   
 };
 
+{ /* memberikan requirement  props addTodo (dengan cara nama props.PropTypes)  */ }
 TodoForm.propTypes = {
     
-    addTodo: PropTypes.func.isRequired
+    addTodo: PropTypes.func.isRequired,
+    showAdd: PropTypes.bool.isRequired,
 }
 
 export default TodoForm;

@@ -7,15 +7,6 @@
     --main-black-color: #484848;
 }
 
-.main-red-color {
-
-    color: var(--main-red-color);
-}
-
-.main-black-color {
-
-    color: var(--main-black-color);
-}
 
 html {
     font-size: 10px;
@@ -68,7 +59,8 @@ body, html{
 
 .header-title {
 
-    flex: 1;
+    /* flex: 1; */
+    width: 52%;
     text-align: center;
     font-size: 3.6rem;
     color: var(--main-black-color);
@@ -78,29 +70,7 @@ body, html{
     text-transform: lowercase;
 }
 
-.header-btn {
 
-    font-size: 1.8rem;
-    font-family: 'Bungee', sans-serif;
-
-    padding: 16px; /* membuat jarak atas dari class header-btn*/
-    cursor: pointer; /* menjadikan huruf tsb menjadi button agar bisa diklik (seperti mouse pointer)*/
-
-    background: unset;
-    outline: unset;
-    border: unset;
-    
-}
-
-.header-btn.main-red-color:active {
-
-    text-shadow: 1px 1px 2px var(--main-red-color);
-}
-
-.header-btn.main-black-color:active {
-
-    text-shadow: 1px 1px 2px var(--main-black-color);
-}
 
 .add {
 
@@ -150,6 +120,7 @@ body, html{
     text-shadow: 1px 1px 2px var(--main-black-color);
 }
 
+
 .todos {
 
     display: flex;
@@ -183,6 +154,19 @@ body, html{
     height: 50px;
 }
 
+.todo-placeholder-text {
+
+    font-family: "Homemade Apple";
+    font-size: 25px;
+    text-align: center;
+    padding: 16px;
+}
+
+.add-button-placeholder-text {
+
+    font-family: "Bungee", sans-serif;
+    font-size: 30px;
+}
 /*  (kalau class) .red-font {
 
     color: #e02622;

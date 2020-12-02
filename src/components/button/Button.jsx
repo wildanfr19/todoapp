@@ -25,14 +25,17 @@ const Button = ( {text, onClick, color, align }) => {
     const classNames = cx(styles.headerBtn, {
         /*logicnya sama seperti pada 
         color === 'black' && 'main-black-color' */
+        /* sebelumnya harus install library classnames terlebih dahulu "npm install classnames --save" */
         /** logikanya jika props color sama dengan black, maka dia akan mengeksekusi 
           class style mainBlackColor yang terdapat pada file button.module.css*/
+        /** pakai const classNames apabila si style nama class memiliki kriteria / logic
+         tertentu*/
         [styles.mainBlackColor]: color === 'black', 
         [styles.mainRedColor]: color === 'red',
         [styles.alignLeft]: align === 'left',
         [styles.alignRight]: align === 'right'
 
-    })
+    });
     
     /* jangan menggunakan const ClassNames (utk join class), tapi ubah caranya
     dengan menggunakan library dependencies yang bernama "classnames" 

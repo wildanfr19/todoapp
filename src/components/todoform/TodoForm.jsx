@@ -3,6 +3,8 @@ import React, { useState } from 'react'; /* useState berfungsi untuk melakukan p
                                         useState("") mendefinisikan bahwa nilai valu berisi string kosong*/
 import PropTypes from 'prop-types';
 
+import styles from './todoform.module.css';
+
 /* React hanya bertugas mengcompile code yang dari const, sampai ke
 codingan yang return html */
 
@@ -40,10 +42,10 @@ const TodoForm = ( { addTodo, showAdd } ) => {
 
         {/*  onSubmit={ handleFormSubmit } = menjalankan function handleFormSubmit ketika tombol disubmit*/}
     return (
-        <section classNameName="add">
-            <form className="add-form" onSubmit={ handleFormSubmit }>
-                <input type="text" className="add-input" value = { value } onChange = { e => setValue(e.target.value)}  /> {/* setValue akan menerima value dari input */}
-                <button className="add-btn main-black-color">Tambah</button>
+        <section className={styles.add}>
+            <form className={styles.addForm} onSubmit={ handleFormSubmit }>
+                <input type="text" className={styles.addInput} value = { value } onChange = { e => setValue(e.target.value)}  /> {/* setValue akan menerima value dari input */}
+                <button className={styles.addBtn}>Tambah</button>
             </form>
         </section>
     );

@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+import styles from './todo.module.css';
+
 const Todo = ({text, completeTodo,index, isCompleted}) => {
 
     /* < style= {{ textDecoration: isCompleted ? 
@@ -12,8 +14,8 @@ const Todo = ({text, completeTodo,index, isCompleted}) => {
           {{ isCompleted ? 
          'line-through': 'initial' }} => merupakan ternary operator*/
     return (
-    <div className="todo" onClick={ () => completeTodo(index)}>
-        <span className="todo-text" style= {{ textDecoration: isCompleted ? 
+    <div className={styles.todo} onClick={ () => completeTodo(index)}>
+        <span className={styles.todoText} style= {{ textDecoration: isCompleted ? 
          'line-through': 'initial'}}>
          { text }
          </span>

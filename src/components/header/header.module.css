@@ -1,0 +1,26 @@
+/* setiap penamaan class bersifat camel case (opsional) */
+:root {
+    --main-red-color: #e06262;
+    --main-black-color: #484848;
+}
+
+.header {
+
+    display: flex;
+    align-items: flex-start; 
+    margin-top: 100px; /*margin (top) dan padding digunakan untuk memberikan jarak (spasi) dari
+                        satu komponen ke komponen lainnya */
+}
+
+.headerTitle {
+
+    /* flex: 1; */
+    width: 52%;
+    text-align: center;
+    font-size: 3.6rem;
+    color: var(--main-black-color);
+
+    font-family: 'Homemade Apple', sans-serif;
+    
+    text-transform: lowercase;
+}

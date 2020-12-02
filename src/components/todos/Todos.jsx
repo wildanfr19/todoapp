@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Todo from './Todo'; 
+import Todo from '../todo/Todo'; 
 import { arrayExpression } from '@babel/types';
+
+import styles from './todos.module.css';
 
 const Todos = ({ todos, completeTodo }) => {
 
@@ -36,9 +38,9 @@ const Todos = ({ todos, completeTodo }) => {
          {/* Jika Jumlah Data Todo 0 (koosng), maka tampilkan panduan placeholder cara menam
         bahkan data (menggunakan conditional renderring)*/}
        {todos.length === 0 && (
-            <div className="todo-placeholder-text">
+            <div className={styles.todoPlaceholderText}>
                 Tambah Data List Todo Dengan Cara Klik Tombol
-                <span className="add-button-placeholder-text"> Tambah </span> 
+                <span className={styles.addButtonPlaceholderText}> Tambah </span> 
                 Pada Pojok Kiri Atas
             </div>
        )};
